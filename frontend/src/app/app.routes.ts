@@ -4,6 +4,7 @@ import { FuncionarioFormComponent } from './pages/funcionario/funcionario-form/f
 import { CategoriaListComponent } from './pages/categoria/categoria-list/categoria-list';
 import { CategoriaFormComponent } from './pages/categoria/categoria-form/categoria-form';
 import { MostrarOrcamentoComponent } from './pages/cliente/mostrar-orcamento/mostrar-orcamento.component';
+import { SolicitacaoManutencao } from './pages/cliente/solicitacao-manutencao/solicitacao-manutencao';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'funcionarios', pathMatch: 'full' },
@@ -19,6 +20,7 @@ export const routes: Routes = [
   { path: 'categorias', component: CategoriaListComponent },
   { path: 'categorias/novo', component: CategoriaFormComponent },
   { path: 'categorias/editar/:id', component: CategoriaFormComponent },
+  { path: 'solicitacao-manutencao', component: SolicitacaoManutencao },
   
   { path: '**', redirectTo: 'funcionarios' } 
 ];

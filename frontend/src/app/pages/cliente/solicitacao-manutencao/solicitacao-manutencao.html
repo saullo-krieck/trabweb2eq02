@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Solicitação de Manutenção</h2>
+  </div>
+
+  <form>
+    <div>
+      <label class="form-label">Descrição do equipamento</label><br>
+      <input class="form-control" type="text" name="descricaoEquipamento" required>
+    </div>
+
+    <br>
+
+    <div>
+      <label class="form-label">Categoria do equipamento</label><br>
+      <select class="form-control" name="categoria" required>
+        <option value="">Selecione</option>
+        <option value="Notebook">Notebook</option>
+        <option value="Desktop">Desktop</option>
+        <option value="Impressora">Impressora</option>
+        <option value="Mouse">Mouse</option>
+        <option value="Teclado">Teclado</option>
+      </select>
+    </div>
+
+    <br>
+
+    <div>
+      <label class="form-label">Descrição do defeito</label><br>
+      <textarea class="form-control" name="descricaoDefeito" rows="4" required></textarea>
+    </div>
+
+    <br>
+
+    <div class="d-flex">
+      <button class="btn btn-primary" type="submit">
+        Registrar Solicitação
+      </button>
+    </div>
+  </form>
+</div>
