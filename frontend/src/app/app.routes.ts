@@ -1,3 +1,21 @@
 import { Routes } from '@angular/router';
+import { FuncionarioListComponent } from './pages/funcionario/funcionario-list/funcionario-list';
+import { FuncionarioFormComponent } from './pages/funcionario/funcionario-form/funcionario-form';
+import { CategoriaListComponent } from './pages/categoria/categoria-list/categoria-list';
+import { CategoriaFormComponent } from './pages/categoria/categoria-form/categoria-form';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: '', redirectTo: 'funcionarios', pathMatch: 'full' },
+  
+  // Rotas de Funcionários
+  { path: 'funcionarios', component: FuncionarioListComponent },
+  { path: 'funcionarios/novo', component: FuncionarioFormComponent },
+  { path: 'funcionarios/editar/:id', component: FuncionarioFormComponent },
+
+  // Rotas de Categorias
+  { path: 'categorias', component: CategoriaListComponent },
+  { path: 'categorias/novo', component: CategoriaFormComponent },
+  { path: 'categorias/editar/:id', component: CategoriaFormComponent },
+  
+  { path: '**', redirectTo: 'funcionarios' } 
+];

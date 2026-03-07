@@ -1,0 +1,34 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Categorias de Equipamentos</h2>
+    <button class="btn btn-primary" routerLink="/categorias/novo">Nova Categoria</button>
+  </div>
+
+  <div class="table-responsive shadow-sm rounded">
+    <table class="table table-hover bg-white mb-0">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Nome da Categoria</th>
+          <th>Status</th>
+          <th class="text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of categorias">
+          <td>{{ c.id }}</td>
+          <td>{{ c.nome }}</td>
+          <td>
+            <span [class]="c.ativo ? 'badge bg-success' : 'badge bg-danger'">
+              {{ c.ativo ? 'Ativa' : 'Inativa' }}
+            </span>
+          </td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-outline-warning me-2" [routerLink]="['/categorias/editar', c.id]">Editar</button>
+            <button class="btn btn-sm btn-outline-danger" (click)="desativar(c.id!)" [disabled]="!c.ativo">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

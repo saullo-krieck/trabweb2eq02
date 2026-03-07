@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Funcionários</h2>
+    <button class="btn btn-primary" routerLink="/funcionarios/novo">Novo Funcionário</button>
+  </div>
+
+  <div class="table-responsive shadow-sm rounded">
+    <table class="table table-hover bg-white mb-0">
+      <thead class="table-light">
+        <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>CPF</th>
+          <th>Perfil</th>
+          <th>Status</th>
+          <th class="text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let f of funcionarios">
+          <td>{{ f.nome }}</td>
+          <td>{{ f.email }}</td>
+          <td>{{ f.cpf }}</td>
+          <td><span class="badge bg-info text-dark">{{ f.perfil }}</span></td>
+          <td>
+            <span [class]="f.ativo ? 'text-success' : 'text-danger'">
+              {{ f.ativo ? 'Ativo' : 'Inativo' }}
+            </span>
+          </td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-outline-warning me-2" [routerLink]="['/funcionarios/editar', f.id]">Editar</button>
+            <button class="btn btn-sm btn-outline-danger" (click)="excluir(f.id!)" [disabled]="!f.ativo">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

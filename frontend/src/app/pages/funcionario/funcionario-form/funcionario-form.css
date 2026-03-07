@@ -1,0 +1,88 @@
+:host {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.card {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border: none;
+  background: none;
+}
+
+/* Grid de 2 colunas para os campos */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.col-12 { grid-column: span 2; }
+
+.form-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.form-control, .form-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: border 0.2s;
+}
+
+.form-control:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* Área dos botões com espaçamento */
+.actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn {
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+  border: none;
+}
+
+.btn-outline-secondary {
+  background: white;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+.btn:hover { opacity: 0.9; transform: translateY(-1px); }
