@@ -1,0 +1,56 @@
+<div class="page-wrapper">
+  <div class="orcamento-card">
+    <header class="topbar">
+      <div class="logo-area">
+        <span class="logo-text">ManutençãoXXX</span>
+      </div>
+
+      <div class="user-box">
+        <div class="avatar">JO</div>
+        <span class="user-name">Joana</span>
+      </div>
+    </header>
+
+    <main class="content">
+      <h1>Analisar Orçamento</h1>
+
+      <hr />
+
+      <div class="info-grid">
+        <div class="label">Equipamento</div>
+        <div class="value">Notebook Dell Inspiron 15</div>
+
+        <div class="label">Categoria</div>
+        <div class="value">Notebook</div>
+
+        <div class="label">Defeito</div>
+        <div class="value">Tela não liga após queda</div>
+
+        <div class="label">Data abertura</div>
+        <div class="value">05/03/2025 14:15</div>
+
+        <div class="label">Orçado por</div>
+        <div class="value">Maria (funcionária)</div>
+      </div>
+
+      <div class="price-card">
+        <div>
+          <p class="price-label">Valor do Orçamento</p>
+          <h2 class="price-value">R$ 350,00</h2>
+        </div>
+
+        <span class="status-badge">● ORÇADA</span>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-approve" (click)="aprovarServico()">
+          ✓ Aprovar Serviço
+        </button>
+
+        <button class="btn btn-reject" (click)="rejeitarServico()">
+          ✕ Rejeitar
+        </button>
+      </div>
+    </main>
+  </div>
+</div>
