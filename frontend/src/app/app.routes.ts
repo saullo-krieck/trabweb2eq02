@@ -3,10 +3,13 @@ import { FuncionarioListComponent } from './pages/funcionario/funcionario-list/f
 import { FuncionarioFormComponent } from './pages/funcionario/funcionario-form/funcionario-form';
 import { CategoriaListComponent } from './pages/categoria/categoria-list/categoria-list';
 import { CategoriaFormComponent } from './pages/categoria/categoria-form/categoria-form';
+import { MostrarOrcamentoComponent } from './pages/cliente/mostrar-orcamento/mostrar-orcamento.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'funcionarios', pathMatch: 'full' },
   
+  //Rotas de Clientes 
+  { path: 'cliente/mostrar-orcamento', component: MostrarOrcamentoComponent },
   // Rotas de Funcionários
   { path: 'funcionarios', component: FuncionarioListComponent },
   { path: 'funcionarios/novo', component: FuncionarioFormComponent },
