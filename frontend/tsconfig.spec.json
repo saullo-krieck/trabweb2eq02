@@ -11,5 +11,5 @@
   "include": [
     "src/**/*.d.ts",
     "src/**/*.spec.ts"
-, "src/app/mostrar-orcamento/mostrar-orcamento.component.spec.ts"  ]
+, "src/app/pages/cliente/mostrar-orcamento/mostrar-orcamento.component.spec.ts"  ]
 }
