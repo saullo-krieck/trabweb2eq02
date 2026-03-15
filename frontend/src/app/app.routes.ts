@@ -5,6 +5,7 @@ import { CategoriaListComponent } from './pages/categoria/categoria-list/categor
 import { CategoriaFormComponent } from './pages/categoria/categoria-form/categoria-form';
 import { MostrarOrcamentoComponent } from './pages/cliente/mostrar-orcamento/mostrar-orcamento.component';
 import { SolicitacaoManutencao } from './pages/cliente/solicitacao-manutencao/solicitacao-manutencao';
+import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'funcionarios', pathMatch: 'full' },
@@ -23,5 +24,8 @@ export const routes: Routes = [
   { path: 'funcionarios/novo', component: FuncionarioFormComponent },
   { path: 'funcionarios/editar/:id', component: FuncionarioFormComponent },
   
+  // Rota de Relatórios
+  { path: 'relatorios', component: RelatoriosComponent },
+
   { path: '**', redirectTo: 'cliente/mostrar-orcamento' } 
 ];
