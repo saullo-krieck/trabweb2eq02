@@ -11,16 +11,17 @@ export const routes: Routes = [
   
   //Rotas de Clientes 
   { path: 'cliente/mostrar-orcamento', component: MostrarOrcamentoComponent },
-  // Rotas de Funcionários
-  { path: 'funcionarios', component: FuncionarioListComponent },
-  { path: 'funcionarios/novo', component: FuncionarioFormComponent },
-  { path: 'funcionarios/editar/:id', component: FuncionarioFormComponent },
-
-  // Rotas de Categorias
+  
+    // Rotas de Categorias
   { path: 'categorias', component: CategoriaListComponent },
   { path: 'categorias/novo', component: CategoriaFormComponent },
   { path: 'categorias/editar/:id', component: CategoriaFormComponent },
   { path: 'solicitacao-manutencao', component: SolicitacaoManutencao },
+
+  // Rotas de Funcionários
+  { path: 'funcionarios', component: FuncionarioListComponent },
+  { path: 'funcionarios/novo', component: FuncionarioFormComponent },
+  { path: 'funcionarios/editar/:id', component: FuncionarioFormComponent },
   
-  { path: '**', redirectTo: 'funcionarios' } 
+  { path: '**', redirectTo: 'cliente/mostrar-orcamento' } 
 ];
