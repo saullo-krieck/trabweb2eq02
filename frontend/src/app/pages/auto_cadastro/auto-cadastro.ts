@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, inject } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
-import { Router, RouterLink } from "@angular/router";
+import { Router } from "@angular/router";
 import { NgxMaskDirective } from "ngx-mask";
 import { AuthService } from "../../services/auth.service";
 import { cpfValidator } from "../../shared/validators/cpf.validator";
@@ -9,7 +9,7 @@ import { cpfValidator } from "../../shared/validators/cpf.validator";
 @Component({
     selector: 'auto-cadastro',
     standalone: true,
-    imports: [CommonModule, ReactiveFormsModule, NgxMaskDirective, RouterLink],
+    imports: [CommonModule, ReactiveFormsModule, NgxMaskDirective],
     templateUrl: './auto-cadastro.html',
     styleUrl: './auto-cadastro.css',
 })
@@ -33,7 +33,7 @@ export class AutoCadastroComponent {
     });
 
     erro = '';
-    successo = '';
+    sucesso = '';
     carregando = false;
     buscandoCep = false;
 
@@ -66,7 +66,7 @@ export class AutoCadastroComponent {
         if (this.form.invalid) return;
         this.carregando = true;
         this.erro = '';
-        this.successo = '';
+        this.sucesso = '';
         const v = this.form.value;
 
         this.auth.cadastro({
@@ -85,7 +85,7 @@ export class AutoCadastroComponent {
             }
         }).subscribe({
             next: (res) => {
-                this.successo = res.message;
+                this.sucesso = res.message;
                 this.carregando = false;
                 setTimeout(() => this.router.navigate(['/login']), 3000);
             },
