@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, inject } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
-import { Router, RouterLink } from "@angular/router";
+import { Router } from "@angular/router";
 import { NgxMaskDirective } from "ngx-mask";
 import { AuthService } from "../../services/auth.service";
 import { cpfValidator } from "../../shared/validators/cpf.validator";
@@ -9,7 +9,7 @@ import { cpfValidator } from "../../shared/validators/cpf.validator";
 @Component({
     selector: 'auto-cadastro',
     standalone: true,
-    imports: [CommonModule, ReactiveFormsModule, NgxMaskDirective, RouterLink],
+    imports: [CommonModule, ReactiveFormsModule, NgxMaskDirective],
     templateUrl: './auto-cadastro.html',
     styleUrl: './auto-cadastro.css',
 })
