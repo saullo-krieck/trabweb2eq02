@@ -33,7 +33,7 @@ export class AutoCadastroComponent {
     });
 
     erro = '';
-    successo = '';
+    sucesso = '';
     carregando = false;
     buscandoCep = false;
 
@@ -66,7 +66,7 @@ export class AutoCadastroComponent {
         if (this.form.invalid) return;
         this.carregando = true;
         this.erro = '';
-        this.successo = '';
+        this.sucesso = '';
         const v = this.form.value;
 
         this.auth.cadastro({
@@ -85,7 +85,7 @@ export class AutoCadastroComponent {
             }
         }).subscribe({
             next: (res) => {
-                this.successo = res.message;
+                this.sucesso = res.message;
                 this.carregando = false;
                 setTimeout(() => this.router.navigate(['/login']), 3000);
             },
