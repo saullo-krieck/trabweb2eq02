@@ -1,6 +1,6 @@
 const express = require('express');
-const cors = required('cors');
-const jwt = required('jsonwebtoken');
+const cors = require('cors');
+const jwt = require('jsonwebtoken');
 const { usuarios, categorias } = require('./data.js');
 
 const app = express();
@@ -11,7 +11,7 @@ app.use(cors({ origin: 'http://localhost:4200' }));
 app.use(express.json());
 
 function autenticar(req, res, next) {
-    const auth = req.headers['Authorization'];
+    const auth = req.headers['authorization'];
     if (!auth?.startsWith('Bearer ')) {
         return res.status(401).json({ message: 'Token não fornecido.' })
     }
