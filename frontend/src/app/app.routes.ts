@@ -6,18 +6,21 @@ import { CategoriaFormComponent } from './pages/categoria/categoria-form/categor
 import { MostrarOrcamentoComponent } from './pages/cliente/mostrar-orcamento/mostrar-orcamento.component';
 import { SolicitacaoManutencao } from './pages/cliente/solicitacao-manutencao/solicitacao-manutencao';
 import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
+import { PagarServico } from './pages/cliente/pagar-servico/pagar-servico';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'funcionarios', pathMatch: 'full' },
   
   //Rotas de Clientes 
   { path: 'cliente/mostrar-orcamento', component: MostrarOrcamentoComponent },
+  { path: 'cliente/solicitacao-manutencao', component: SolicitacaoManutencao },
+  { path: 'cliente/pagar-servico', component: PagarServico },
+
   
     // Rotas de Categorias
   { path: 'categorias', component: CategoriaListComponent },
   { path: 'categorias/novo', component: CategoriaFormComponent },
   { path: 'categorias/editar/:id', component: CategoriaFormComponent },
-  { path: 'solicitacao-manutencao', component: SolicitacaoManutencao },
 
   // Rotas de Funcionários
   { path: 'funcionarios', component: FuncionarioListComponent },
