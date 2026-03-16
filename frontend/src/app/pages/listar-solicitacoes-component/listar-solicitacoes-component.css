@@ -1,0 +1,44 @@
+/* tabela.component.css */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+.custom-table th {
+  background-color: #4CAF50;
+  color: white;
+  text-align: left;
+  padding: 10px;
+}
+
+.custom-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.custom-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.actions i {
+  margin: 0 5px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.actions i.fa-eye:hover {
+  color: #2196F3; /* azul */
+}
+
+.actions i.fa-edit:hover {
+  color: #FFC107; /* amarelo */
+}
+
+.actions i.fa-trash:hover {
+  color: #F44336; /* vermelho */
+}

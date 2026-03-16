@@ -7,16 +7,18 @@ import { MostrarOrcamentoComponent } from './pages/cliente/mostrar-orcamento/mos
 import { SolicitacaoManutencao } from './pages/cliente/solicitacao-manutencao/solicitacao-manutencao';
 import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
 import { PagarServico } from './pages/cliente/pagar-servico/pagar-servico';
+import { ListarSolicitacoesComponent } from './pages/listar-solicitacoes-component/listar-solicitacoes-component';
+import { EfetuarOrcamentoComponent } from './pages/efetuar-orcamento-component/efetuar-orcamento-component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'funcionarios', pathMatch: 'full' },
-  
-  //Rotas de Clientes 
+
+  //Rotas de Clientes
   { path: 'cliente/mostrar-orcamento', component: MostrarOrcamentoComponent },
   { path: 'cliente/solicitacao-manutencao', component: SolicitacaoManutencao },
   { path: 'cliente/pagar-servico', component: PagarServico },
 
-  
+
     // Rotas de Categorias
   { path: 'categorias', component: CategoriaListComponent },
   { path: 'categorias/novo', component: CategoriaFormComponent },
@@ -26,9 +28,15 @@ export const routes: Routes = [
   { path: 'funcionarios', component: FuncionarioListComponent },
   { path: 'funcionarios/novo', component: FuncionarioFormComponent },
   { path: 'funcionarios/editar/:id', component: FuncionarioFormComponent },
-  
+
+  //Rotas de Orçamentos e Solicitações de Manutenção
+  { path: 'orcamentos', component: ListarSolicitacoesComponent },
+  { path: 'orcamentos/efetuar', component: EfetuarOrcamentoComponent },
+
+
+
   // Rota de Relatórios
   { path: 'relatorios', component: RelatoriosComponent },
 
-  { path: '**', redirectTo: 'cliente/mostrar-orcamento' } 
+  { path: '**', redirectTo: 'cliente/mostrar-orcamento' }
 ];

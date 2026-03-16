@@ -1,1 +1,28 @@
 <p>listar-solicitacoes-component works!</p>
+
+
+<!-- tabela.component.html -->
+<table class="custom-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of lista">
+      <td>{{ item.id }}</td>
+      <td>{{ item.nome }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.status }}</td>
+      <td class="actions">
+        <i class="fa fa-eye" title="Visualizar"></i>
+        <i class="fa fa-edit" title="Editar"></i>
+        <i class="fa fa-trash" title="Excluir"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
