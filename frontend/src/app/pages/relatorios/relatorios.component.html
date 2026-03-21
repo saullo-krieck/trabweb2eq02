@@ -1,21 +1,29 @@
-<div style="padding: 20px; font-family: sans-serif;">
-  <h2>Relatórios Gerenciais</h2>
+<div class="relatorios-container">
+  <h2 class="titulo-pagina">Relatórios Gerenciais</h2>
 
-  <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px;">
-    <h3>Receitas por Período</h3>
+  <div class="card-relatorio">
+    <h3 class="titulo-card">Receitas por Período</h3>
     
-    <label>Data Início: </label>
-    <input type="date" [(ngModel)]="dataInicio" style="margin-right: 15px;">
+    <div class="form-group">
+      <label>Data Início:</label>
+      <input type="date" [(ngModel)]="dataInicio">
+    </div>
     
-    <label>Data Fim: </label>
-    <input type="date" [(ngModel)]="dataFim" style="margin-right: 15px;">
+    <div class="form-group">
+      <label>Data Fim:</label>
+      <input type="date" [(ngModel)]="dataFim">
+    </div>
     
-    <button (click)="baixarRelatorioReceitas()">Baixar PDF (Período)</button>
+    <button class="btn-baixar" (click)="baixarRelatorioReceitas()">
+      Baixar PDF (Período)
+    </button>
   </div>
 
-  <div style="border: 1px solid #ccc; padding: 15px;">
-    <h3>Receitas por Categoria</h3>
-    <p>Gera o PDF com o agrupamento de valores de equipamentos.</p>
-    <button (click)="baixarRelatorioCategorias()">Baixar PDF (Categorias)</button>
+  <div class="card-relatorio">
+    <h3 class="titulo-card">Receitas por Categoria</h3>
+    <p class="texto-ajuda">Gera o PDF com o agrupamento de valores de equipamentos.</p>
+    <button class="btn-baixar" (click)="baixarRelatorioCategorias()">
+      Baixar PDF (Categorias)
+    </button>
   </div>
 </div>

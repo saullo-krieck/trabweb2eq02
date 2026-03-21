@@ -7,6 +7,7 @@ import { RelatorioService } from '../../services/relatorio.service';
   standalone: true,
   imports: [FormsModule], //ngModel 
   templateUrl: './relatorios.component.html',
+  styleUrl: './relatorios.component.css'
 })
 export class RelatoriosComponent {
   
