@@ -6,7 +6,11 @@
             "type": "chrome",
             "request": "launch",
             "preLaunchTask": "ng serve",
-            "url": "http://localhost:4200/"
+            "url": "http://localhost:4200/",
+            "webRoot": "${workspaceFolder}/frontend",
+            "sourceMapPathOverrides": {
+                "/@fs/*": "/*"
+            }
         },
         {
             "name": "Mock Server",

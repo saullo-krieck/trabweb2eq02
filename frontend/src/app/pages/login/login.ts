@@ -33,7 +33,7 @@ export class LoginComponent {
         this.auth.login(email!, senha!).subscribe({
             next: (res) => {
                 if (res.usuario.perfil === 'FUNCIONARIO') {
-                    this.router.navigate(['/funcionarios']);
+                    this.router.navigate(['/funcionarios/home']);
                 } else {
                     this.router.navigate(['/solicitacao-manutencao']);
                 }
