@@ -11,6 +11,7 @@ import { ListarSolicitacoesComponent } from './pages/listar-solicitacoes-compone
 import { EfetuarOrcamentoComponent } from './pages/efetuar-orcamento-component/efetuar-orcamento-component';
 import { LoginComponent } from './pages/login/login';
 import { AutoCadastroComponent } from './pages/auto_cadastro/auto-cadastro';
+import { VisualizarServico } from './pages/cliente/visualizar-servico/visualizar-servico';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -23,6 +24,7 @@ export const routes: Routes = [
   { path: 'cliente/mostrar-orcamento', component: MostrarOrcamentoComponent },
   { path: 'cliente/solicitacao-manutencao', component: SolicitacaoManutencao },
   { path: 'cliente/pagar-servico', component: PagarServico },
+  { path: 'cliente/visualizar-servico/:id', component: VisualizarServico },
 
 
   // Rotas de Categorias
