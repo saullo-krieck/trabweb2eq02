@@ -1,1 +1,81 @@
-<p>visualizar-servico works!</p>
+<div class="container-principal">
+  <div class="cartao-solicitacao">
+    
+    <!-- Cabeçalho -->
+    <div class="cabecalho">
+      <div class="info-titulo">
+        <h2>Solicitação #{{ solicitacao().id }}</h2>
+        <p>Criada em {{ solicitacao().dataHoraCriacao | date:'dd/MM/yyyy HH:mm' }}</p>
+      </div>
+      <span [class]="statusBadgeClass()">
+        {{ solicitacao().estado }}
+      </span>
+    </div>
+
+    <!-- Corpo -->
+    <div class="corpo-detalhes">
+      
+      <!-- Informações do Equipamento -->
+      <div class="grid-duas-colunas">
+        <div class="item-info">
+          <h3>Equipamento</h3>
+          <p class="destaque">{{ solicitacao().descricaoEquipamento }}</p>
+        </div>
+        <div class="item-info">
+          <h3>Categoria</h3>
+          <p class="texto-padrao">{{ solicitacao().categoria }}</p>
+        </div>
+      </div>
+
+      <!-- Defeito -->
+      <div class="secao-defeito">
+        <h3>Defeito Relatado</h3>
+        <div class="caixa-defeito">
+          {{ solicitacao().defeito }}
+        </div>
+      </div>
+
+      <hr class="divisor">
+
+      <!-- Orçamento e Datas -->
+      <div class="grid-tres-colunas">
+        <div class="caixa-resumo">
+          <h3>Valor do Orçamento</h3>
+          @if (solicitacao().valorOrcamento > 0) {
+            <p class="valor-verde">{{ solicitacao().valorOrcamento | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</p>
+          } @else {
+            <p class="texto-italico">Ainda não orçado</p>
+          }
+        </div>
+        
+        <div class="caixa-resumo">
+          <h3>Finalização</h3>
+          @if (solicitacao().dataHoraFinalizacao) {
+            <p class="texto-negrito">{{ solicitacao().dataHoraFinalizacao | date:'dd/MM/yyyy HH:mm' }}</p>
+          } @else {
+            <p class="texto-italico">Em andamento</p>
+          }
+        </div>
+
+        <div class="caixa-resumo">
+          <h3>ID Funcionário</h3>
+          <p class="texto-negrito">#{{ solicitacao().funcionarioId }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rodapé / Ações -->
+    <div class="rodape-acoes">
+      <button class="btn-voltar">Voltar</button>
+      
+      @if (solicitacao().estado === 'ORÇADA') {
+        <button class="btn-aprovar">Aprovar Orçamento</button>
+        <button class="btn-rejeitar">Rejeitar</button>
+      }
+
+      @if (solicitacao().estado === 'ARRUMADA') {
+        <button class="btn-finalizar">Finalizar Solicitação</button>
+      }
+    </div>
+  </div>
+</div>
