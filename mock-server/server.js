@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-const { usuarios, categorias } = require('./data.js');
+const { usuarios, categorias, solicitacoes } = require('./data.js');
 
 const app = express();
 const PORT = 8080;
@@ -69,4 +69,17 @@ app.get('/api/usuarios', autenticar, autorizar('FUNCIONARIO'), (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`\nMock Server rodando em http://localhost:${PORT}\n`);
+});
+
+// SOLICITAÇÕES
+app.get('/api/solicitacoes', autenticar, (req, res) => {
+    const { estado } = req.query;
+    let lista = solicitacoes.map(s => {
+        const cliente = usuarios.find((u) => u.id === s.clienteId);
+        return { ...s, nomeCliente: cliente?.nome ?? 'Desconhecido' };
+    });
+    if (estado) {
+        lista = lista.filter(s => s.estado === estado);
+    }
+    res.json(lista);
 });
