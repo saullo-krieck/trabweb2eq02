@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ng serve",
+            "type": "chrome",
+            "request": "launch",
+            "preLaunchTask": "ng serve",
+            "url": "http://localhost:4200/"
+        },
+        {
+            "name": "Mock Server",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/mock-server/server.js",
+            "cwd": "${workspaceFolder}/mock-server"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Full Stack (Mock)",
+            "configurations": [
+                "Mock Server",
+                "ng serve"
+            ]
+        }
+    ]
+}

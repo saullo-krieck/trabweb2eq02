@@ -8,8 +8,10 @@
                     </h2>
                 </div>
                 <div class="card-body p-4">
-                    <div *ngIf="sucesso" class="alert alert-success">{{ sucesso }}</div>
-                    <div *ngIf="erro" class="alert alert-danger">{{ erro }} </div>
+                    <div *ngIf="sucesso" class="alert alert-success">
+                        {{ sucesso }}</div>
+                    <div *ngIf="erro" class="alert alert-danger">
+                        {{ erro }} </div>
 
                     <form [formGroup]="form" (ngSubmit)="cadastrar()">
                         <h6 class="text-muted mb-3">Dados Pessoais</h6>
@@ -17,15 +19,17 @@
                             <div class="col-md-6">
                                 <label class="form-label">Nome Completo</label>
                                 <input type="text" class="form-control" formControlName="nome">
-                                <div *ngIf="form.get('nome')?.touched && form.get('nome')?.invalid"
-                                    class="text-danger small mt-1">
+                                <div *ngIf="form.get('nome')?.touched && 
+                                form.get('nome')?.invalid" class="text-danger 
+                                small mt-1">
                                     Nome é obrigatório (mínimo 3 caracteres)
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">E-mail</label>
                                 <input type="email" class="form-control" formControlName="email">
-                                <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+                                <div *ngIf="form.get('email')?.touched && 
+                                form.get('email')?.invalid">
                                     Informe um e-mail válido.
                                 </div>
                             </div>
@@ -33,8 +37,8 @@
                                 <label class="form-label">CPF</label>
                                 <input type="text" class="form-control" formControlName="cpf" mask="000.000.000-00"
                                     [dropSpecialCharacters]="false" placeholder="000.000.000-00">
-                                <div *ngIf="form.get('cpf')?.touched && form.get('cpf')?.errors?.['cpfInvalido']"
-                                    class="text-danger small mt-1">
+                                <div *ngIf="form.get('cpf')?.touched && 
+                                form.get('cpf')?.errors?.['cpfInvalido']" class="text-danger small mt-1">
                                     CPF inválido.
                                 </div>
                             </div>
@@ -69,7 +73,49 @@
                                 <label class="form-label">Logradouro</label>
                                 <input type="text" class="form-control" formControlName="logradouro">
                             </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Número</label>
+                                <input type="text" class="form-control" formControlName="numero">
+                                <div *ngIf="form.get('numero')?.touched && 
+                                form.get('numero')?.invalid" class="text-danger
+                                small mt-1">
+                                    Numero é obrigatório
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Complemento</label>
+                                <input type="text" class="form-control" formControlName="complemento"
+                                    placeholder="Opcional">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Bairro</label>
+                                <input type="text" class="form-control" formControlName="bairro">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Cidade</label>
+                                <input type="text" class="form-control" formControlName="cidade">
+                            </div>
+                            <div class="col-md-1">
+                                <label class="form-label">UF</label>
+                                <input type="text" class="form-control" formControlName="uf" maxlength="2">
+                            </div>
+                        </div>
 
+                        <div class="col-12 mt-4 d-flex justify-content-end
+                        border-top pt-3">
+
+                            <button type="button" class="btn 
+                            btn-outline-secondary me-2" (click)="voltar()">
+                                Voltar
+                            </button>
+
+                            <button type="submit" class="btn btn-primary 
+                            px-4" [disabled]="form.invalid || carregando">
+                                <span *ngIf="carregando" class="spinner-border
+                                spinner-border-sm me-1"></span>
+                                <i *ngIf="!carregando" class="bi bi-check-lg me-1"></i>
+                                Cadastrar
+                            </button>
                         </div>
                     </form>
                 </div>

@@ -9,9 +9,15 @@ import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
 import { PagarServico } from './pages/cliente/pagar-servico/pagar-servico';
 import { ListarSolicitacoesComponent } from './pages/listar-solicitacoes-component/listar-solicitacoes-component';
 import { EfetuarOrcamentoComponent } from './pages/efetuar-orcamento-component/efetuar-orcamento-component';
+import { LoginComponent } from './pages/login/login';
+import { AutoCadastroComponent } from './pages/auto_cadastro/auto-cadastro';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'funcionarios', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+  // Rotas públicas 
+  { path: 'login', component: LoginComponent },
+  { path: 'auto-cadastro', component: AutoCadastroComponent },
 
   //Rotas de Clientes
   { path: 'cliente/mostrar-orcamento', component: MostrarOrcamentoComponent },
@@ -19,7 +25,7 @@ export const routes: Routes = [
   { path: 'cliente/pagar-servico', component: PagarServico },
 
 
-    // Rotas de Categorias
+  // Rotas de Categorias
   { path: 'categorias', component: CategoriaListComponent },
   { path: 'categorias/novo', component: CategoriaFormComponent },
   { path: 'categorias/editar/:id', component: CategoriaFormComponent },
@@ -33,10 +39,8 @@ export const routes: Routes = [
   { path: 'orcamentos', component: ListarSolicitacoesComponent },
   { path: 'orcamentos/efetuar', component: EfetuarOrcamentoComponent },
 
-
-
   // Rota de Relatórios
   { path: 'relatorios', component: RelatoriosComponent },
 
-  { path: '**', redirectTo: 'cliente/mostrar-orcamento' }
+  { path: '**', redirectTo: 'login' }
 ];

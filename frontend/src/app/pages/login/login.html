@@ -4,7 +4,8 @@
             <div class="card border-0 shadow-sm">
                 <div class="card-header bg-white py-3 text-center">
                     <h2 class="mb-0 fs-4">
-                        <i class="bi bi-box-arrow-in-right me-2">Login</i>
+                        <i class="bi bi-box-arrow-in-right me-2"></i>
+                        Login
                     </h2>
                 </div>
                 <div class="card-body p-4">
@@ -13,21 +14,34 @@
                             <label class="form-label">E-mail</label>
                             <input type="email" class="form-control" formControlName="email"
                                 placeholder="seu@email.com">
-                            <div *ngIf="form.get('senha')?.touched && form.get('senha')?.invalid"
-                                class="text-danger small mt1">
+                            <div *ngIf="form.get('email')?.touched && 
+                            form.get('email')?.invalid" class="text-danger
+                            small mt-1">
+                                Informe um e-mail válido.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Senha</label>
+                            <input type="password" class="form-control" formControlName="senha" placeholder="Senha">
+                            <div *ngIf="form.get('senha')?.touched && 
+                            form.get('senha')?.invalid" class="text-danger 
+                            small mt-1">
                                 Senha é obrigatória.
                             </div>
                         </div>
-                        <div *ngIf="erro" class="alert alert-danger py-2">{{ erro }} </div>
+
+                        <div *ngIf="erro" class="alert alert-danger py-2">
+                            {{ erro }} </div>
+
                         <button type="submit" class="btn btn-primary w-100" [disabled]="form.invalid || carregando">
-                            <span *ngIf="carregando" class="spinner-border spinner-border-sm me-1">
-                                Entrar
-                            </span>
+                            <span *ngIf="carregando" class="spinner-border spinner-border-sm me-1"></span>
+                            Entrar
                         </button>
                     </form>
                     <hr>
                     <p class="text-center mb-0 small">
-                        Nao tem conta? <a routerLink="/cadastro">Cadastre-se aqui</a>
+                        Nao tem conta? <a routerLink="/auto-cadastro">Cadastre-se aqui</a>
                     </p>
                 </div>
             </div>

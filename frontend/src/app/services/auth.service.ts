@@ -21,7 +21,7 @@ export class AuthService {
     }
 
     cadastro(dados: any): Observable<{ message: string }> {
-        return this.http.post<{ message: string }>(`${this.API}/cadastro`, dados);
+        return this.http.post<{ message: string }>(`${this.API}/auto-cadastro`, dados);
     }
 
     logout(): void {
