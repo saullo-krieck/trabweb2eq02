@@ -95,4 +95,8 @@ export class AutoCadastroComponent {
             }
         });
     }
+
+    voltar() {
+        this.router.navigate(['/login']);
+    }
 }
