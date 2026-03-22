@@ -41,7 +41,7 @@
       <div class="grid-tres-colunas">
         <div class="caixa-resumo">
           <h3>Valor do Orçamento</h3>
-          @if (solicitacao().valorOrcamento > 0) {
+          @if (solicitacao() && solicitacao().valorOrcamento !== null) {
             <p class="valor-verde">{{ solicitacao().valorOrcamento | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</p>
           } @else {
             <p class="texto-italico">Ainda não orçado</p>

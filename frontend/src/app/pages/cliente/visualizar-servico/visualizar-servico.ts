@@ -23,7 +23,9 @@ export class VisualizarServico {
     dataHoraCriacao: '2026-03-20T14:30:00Z',
     dataHoraFinalizacao: '',
     valorOrcamento: 1250.00,
-    funcionarioId: 402
+    funcionarioId: 402,
+    clienteId: 1,
+    nomeCliente: 'João Silva'
   });
 
   statusBadgeClass = computed(() => {
