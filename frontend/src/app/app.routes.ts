@@ -11,6 +11,8 @@ import { ListarSolicitacoesComponent } from './pages/listar-solicitacoes-compone
 import { EfetuarOrcamentoComponent } from './pages/efetuar-orcamento-component/efetuar-orcamento-component';
 import { LoginComponent } from './pages/login/login';
 import { AutoCadastroComponent } from './pages/auto_cadastro/auto-cadastro';
+import { HomeFuncionarioComponent } from './pages/home-funcionario/home-funcionario';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -31,6 +33,11 @@ export const routes: Routes = [
   { path: 'categorias/editar/:id', component: CategoriaFormComponent },
 
   // Rotas de Funcionários
+  {
+    path: 'funcionarios/home', component: HomeFuncionarioComponent, canActivate: [
+      authGuard
+    ]
+  },
   { path: 'funcionarios', component: FuncionarioListComponent },
   { path: 'funcionarios/novo', component: FuncionarioFormComponent },
   { path: 'funcionarios/editar/:id', component: FuncionarioFormComponent },

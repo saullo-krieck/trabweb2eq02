@@ -113,4 +113,42 @@ const categorias = [
     { id: 5, nome: 'Teclado', descricao: 'Dispositivos de entrada de dados' },
 ];
 
-module.exports = { usuarios, categorias };
+const solicitacoes = [
+    {
+        id: 1,
+        clienteId: 3,
+        descricaoEquipamento: 'Notebook Dell Inspiron 15',
+        categoria: 'Notebook',
+        defeito: 'Não liga',
+        estado: 'ABERTA',
+        dataHoraCriacao: '2026-03-20T08:30:00.000Z',
+        dataHoraFinalizacao: null,
+        valorOrcamento: null,
+        funcionarioId: null,
+    },
+    {
+        id: 2,
+        clienteId: 4,
+        descricaoEquipamento: 'Impressora HP LaserJet',
+        categoria: 'Impressora',
+        defeito: 'Papel enroscado',
+        estado: 'ABERTA',
+        dataHoraCriacao: '2026-03-20T08:30:00.000Z',
+        dataHoraFinalizacao: null,
+        valorOrcamento: null,
+        funcionarioId: null,
+    }, {
+        id: 1,
+        clienteId: 3,
+        descricaoEquipamento: 'Notebook Dell Inspiron 15',
+        categoria: 'Notebook',
+        defeito: 'Não liga',
+        estado: 'ABERTA',
+        dataHoraCriacao: '2026-03-20T08:30:00.000Z',
+        dataHoraFinalizacao: null,
+        valorOrcamento: 350.00,
+        funcionarioId: 1,
+    },
+];
+
+module.exports = { usuarios, categorias, solicitacoes };

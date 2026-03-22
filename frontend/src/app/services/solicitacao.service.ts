@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, ObservedValuesFromArray } from 'rxjs';
+import { Solicitacao } from '../shared/models/solicitacao.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class SolicitacaoService {
 
   constructor(private http: HttpClient) { }
   // RF016 - Finalizar Solicitacao do cliente
-  
+
   finalizarSolicitacao(idSol: number, idFunc: number): Observable<any> {
 
     // IDs sao validos 
@@ -41,5 +42,9 @@ export class SolicitacaoService {
 
     // requisicao HTTP 
     return this.http.patch<any>(urlCompleta, dados);
+  }
+
+  listarAbertas(): Observable<Solicitacao[]> {
+    return this.http.get<Solicitacao[]>(`${this.url}?estado=ABERTA`);
   }
 }
