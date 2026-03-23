@@ -12,16 +12,15 @@ export class MostrarOrcamentoComponent {
   mostrarModal = false;
   mensagemModal = '';
 
-  aprovarServico() {
-    this.mensagemModal = 'Serviço aprovado no Valor R$ 350,00';
-    console.log('teste');
-    this.mostrarModal = true;
-  }
+aprovarServico() {
+  this.mensagemModal = 'Serviço aprovado no Valor R$ 350,00';
+  this.mostrarModal = true;
+}
 
-  rejeitarServico() {
-    this.mensagemModal = 'Serviço Rejeitado';
-    this.mostrarModal = true;
-  }
+ rejeitarServico() {
+  this.mensagemModal = 'Serviço Rejeitado';
+  this.mostrarModal = true;
+}
 
   fecharModal() {
     this.mostrarModal = false;
