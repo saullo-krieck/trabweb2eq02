@@ -67,11 +67,7 @@ app.get('/api/usuarios', autenticar, autorizar('FUNCIONARIO'), (req, res) => {
     res.json(lista);
 });
 
-app.listen(PORT, () => {
-    console.log(`\nMock Server rodando em http://localhost:${PORT}\n`);
-});
-
-// SOLICITAÇÕES
+// SOLICITAÇÕES - HOME FUNCIONARIO
 app.get('/api/solicitacoes', autenticar, (req, res) => {
     const { estado } = req.query;
     let lista = solicitacoes.map(s => {
@@ -83,3 +79,23 @@ app.get('/api/solicitacoes', autenticar, (req, res) => {
     }
     res.json(lista);
 });
+
+// SOLICITACOES - HOME CLIENTE
+app.get('/api/solicitacoes/cliente/:clienteId', autenticar, (req, res) => {
+    const clienteId = parseInt(req.params.clienteId);
+    const lista = solicitacoes.filter(s => s.clienteId === clienteId)
+        .map(s => {
+            const cliente = usuarios.find(u => u.id === s.clienteId);
+            return { ...s, nomeCliente: cliente?.nome ?? 'Desconhecido' };
+        })
+        .sort((a, b) => new Date(a.dataHoraCriacao).getTime() -
+            new Date(b.dataHoraCriacao).getTime());
+    res.json(lista);
+});
+
+
+app.listen(PORT, () => {
+    console.log(`\nMock Server rodando em http://localhost:${PORT}\n`);
+});
+
+

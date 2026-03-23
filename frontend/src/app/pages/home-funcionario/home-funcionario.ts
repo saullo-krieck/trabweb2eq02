@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject, OnInit, signal } from "@angular/core";
 import { SolicitacaoService } from "../../services/solicitacao.service";
 import { Router } from "@angular/router";
 import { Solicitacao } from "../../shared/models/solicitacao.model";
@@ -15,13 +15,13 @@ export class HomeFuncionarioComponent implements OnInit {
     private service = inject(SolicitacaoService);
     private router = inject(Router);
 
-    solicitacoes: Solicitacao[] = [];
-    erro = '';
+    solicitacoes = signal<Solicitacao[]>([]);
+    erro = signal('');
 
     ngOnInit(): void {
         this.service.listarAbertas().subscribe({
-            next: (lista) => this.solicitacoes = lista,
-            error: () => this.erro = 'Erro ao carregar solicitações.'
+            next: (lista) => this.solicitacoes.set(lista),
+            error: () => this.erro.set('Erro ao carregar solicitações.')
         });
     }
 
