@@ -17,7 +17,7 @@
   background: #f7f6f4;
   border-radius: 24px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  /* overflow: visible; */
 }
 
 .topbar {
@@ -236,6 +236,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
 }
 
 .modal {
@@ -245,9 +246,9 @@ hr {
   text-align: center;
   min-width: 280px;
   max-width: 320px;
-
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   animation: modalFade 0.25s ease;
+  z-index: 10000;
 }
 
 .modal p {
@@ -282,4 +283,56 @@ hr {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.orcamento-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+.price-card:hover {
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-approve:hover {
+  background: #c04e15;
+}
+
+.btn-reject:hover {
+  background: #e9caca;
+}
+
+.status-badge {
+  transition: all 0.2s ease;
+}
+
+.status-badge:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  border: 1px solid #eee;
+}
+
+.modal-backdrop {
+  backdrop-filter: blur(2px);
+}
+
+.modal button:active {
+  transform: scale(0.95);
+}
+
+.logo-text {
+  letter-spacing: 1px;
+}
+
+.user-box:hover {
+  background: #2a2f3d;
+  transition: 0.2s ease;
 }
